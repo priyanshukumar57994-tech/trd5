@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JATT ARMY</title>
+<title>JATT ARMY - No.1 Trading Channel</title>
+
+<!-- FB PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1068252882328800');
 fbq('track', 'PageView');
 </script>
+
 <style>
-body{margin:0;background:#0a0420;display:flex;justify-content:center;align-items:center;min-height:100vh;font-family:Arial}
-.card{width:90%;max-width:380px;background:#1a0e3a;border:2px solid #a855f7;border-radius:28px;padding:24px;text-align:center}
-h1{color:#ffcc00;margin:0}
-.logo{width:180px;height:180px;border-radius:50%;border:4px solid #ffcc00;margin:15px auto;display:block}
-#timer{color:white;margin:12px 0;font-weight:bold}
-.btn{display:inline-block;width:85%;background:grey;color:white;padding:16px;border-radius:50px;text-decoration:none;font-weight:900;opacity:0.5}
-.btn.active{background:linear-gradient(90deg,#ff0a54,#ff8a00);opacity:1}
+body{margin:0;background:#0b0520;display:flex;justify-content:center;align-items:center;min-height:100vh;font-family:Arial}
+.box{width:90%;max-width:360px;background:#1a0e3a;border:2px solid #a855f7;border-radius:28px;padding:22px;text-align:center}
+.box h1{color:#ffcc00;font-size:28px;margin:0}
+.box img{width:170px;height:170px;border-radius:50%;border:4px solid #ffcc00;margin:15px 0;object-fit:cover}
+.box p{color:#ffcc00;font-weight:700;font-size:13px}
+#timer{color:#fff;font-size:14px;margin:10px 0}
+.btn{display:block;background:linear-gradient(90deg,#ff0a54,#ff8a00);color:#fff;padding:16px;border-radius:100px;text-decoration:none;font-weight:900;margin-top:12px;pointer-events:none;opacity:0.5}
+.btn.active{pointer-events:auto;opacity:1}
 </style>
 </head>
 <body>
-<div class="card">
+<div class="box">
 <h1>👑 JATT ARMY 👑</h1>
-<img class="logo" src="profile.jpg">
-<div style="color:#ffcc00;font-weight:700">🏆 INDIA'S NO.1 TRADING CHANNEL 🏆</div>
-<div id="timer">⏳ Wait 5 seconds...</div>
-<a id="joinBtn" class="btn" href="https://t.me/+10C5QlqUUPBmZTNl" target="_blank">Join Telegram</a>
+<img src="profile.jpg">
+<p>🏆 INDIA'S NO.1 SIGNALS & TRADING CHANNEL 🏆</p>
+<div id="timer">⏳ Please wait 5 seconds...</div>
+<a id="joinBtn" class="btn" href="https://t.me/+10C5QlqUUPBmZTNl">✈ Join Telegram Now →</a>
 </div>
 
 <script>
-let time = 5;
-let timerText = document.getElementById('timer');
-let btn = document.getElementById('joinBtn');
+let timeLeft = 5;
+const timerEl = document.getElementById('timer');
+const btn = document.getElementById('joinBtn');
 
-// shuru me link band
-btn.onclick = function(e){
-  if(time > 0){
-    e.preventDefault();
-    return false;
-  } else {
-    fbq('track','Lead');
-  }
-};
+let countdown = setInterval(()=>{
+ timeLeft--;
+ timerEl.innerHTML = ⏳ Please wait ${timeLeft} seconds...;
+ if(timeLeft <= 0){
+   clearInterval(countdown);
+   timerEl.innerHTML = "✅ Verified - You can Join Now";
+   btn.classList.add('active');
+ }
+},1000);
 
-let x = setInterval(function(){
-  time--;
-  timerText.innerHTML = "⏳ Wait " + time + " seconds...";
-  if(time <= 0){
-    clearInterval(x);
-    timerText.innerHTML = "✅ Verified - Click to Join";
-    btn.classList.add('active');
-  }
-}, 1000);
+// Real click pe hi Lead fire hoga
+btn.addEventListener('click', ()=>{
+ fbq('track', 'Lead');
+});
 </script>
 </body>
 </html>
